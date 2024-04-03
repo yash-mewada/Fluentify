@@ -3,6 +3,7 @@
 import { refillHearts } from "@/actions/user-progress";
 import { createStripeUrl } from "@/actions/user-subscription";
 import { Button } from "@/components/ui/button";
+import { POINTS_TO_REFILL } from "@/constants";
 import Image from "next/image";
 import { useTransition } from "react";
 import { toast } from "sonner";
@@ -12,8 +13,6 @@ type Props = {
   points: number;
   hasActiveSubscription: boolean;
 };
-
-const POINTS_TO_REFILL = 10;
 
 export const Items = ({ hearts, points, hasActiveSubscription }: Props) => {
   const [pending, startTransition] = useTransition();
